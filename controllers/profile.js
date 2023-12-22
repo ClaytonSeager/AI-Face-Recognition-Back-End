@@ -1,4 +1,4 @@
-const handleProfileGet = (req, res, db) => {
+export const handleProfileGet = (req, res, db) => {
     const { id } = req.params;
     db.select('*')
         .from('users')
@@ -12,5 +12,3 @@ const handleProfileGet = (req, res, db) => {
         })
         .catch(err => res.status(400).json('Error getting user.'))
 }
-
-export default handleProfileGet

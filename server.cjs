@@ -3,11 +3,10 @@ import bodyParser from 'body-parser';
 import bcrypt from 'bcryptjs';
 import cors from 'cors';
 import knex from 'knex';
-import handleRegister from "./controllers/register";
-import handleSignin from './controllers/signin';
-import handleProfileGet from './controllers/profile';
-import handleImage from './controllers/image';
-import handleAPICall from './controllers/image';
+import {handleRegister} from "./controllers/register";
+import {handleSignin} from './controllers/signin';
+import {handleProfileGet} from './controllers/profile';
+import {handleImage, handleAPICall } from './controllers/image';
 
 // ===== DATABASE CONNECTION ===== \\
 const db = knex({

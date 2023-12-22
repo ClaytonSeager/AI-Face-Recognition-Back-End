@@ -2,11 +2,11 @@
   "name": "smart-brain-api",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
-  "scripts": {
-    "start": "nodemon server.cjs"
-  },
+  "main": "server.cjs",
   "type": "module",
+  "scripts": {
+    "start": "node server.cjs"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
