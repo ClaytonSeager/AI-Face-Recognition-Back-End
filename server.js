@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const knex = require('knex');
-const register = require('./controllers/register');
+import handleRegister from "./controllers/register.js";
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
@@ -28,7 +28,7 @@ app.use(cors())
 // ===== HANDLERS ===== \\
 app.get('/', (req, res)=> {res.send('success')})
 app.post('/signin', signin.handleSignin(db, bcrypt))
-app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
+app.post('/register', (req, res) => { handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db) })
 app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { image.handleAPICall(req, res) })
